@@ -1,0 +1,129 @@
+.details-tagline {
+    text-align: center;
+    font-weight: 500;
+    font-size: 28px;
+    padding-bottom: 0.5em;
+    color: $color-dark-grey;
+    @include respond-to(media-900) {
+        font-size: 26px;
+    }
+    @include respond-to(media-600) {
+        font-size: 24px;
+        padding-bottom: 0em;
+    }
+    @include respond-to(media-500) {
+        font-size: 22px;
+    }
+    @include respond-to(media-400) {
+        font-size: 20px;
+    }
+}
+.details {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 100px;
+    padding-top: 10px;
+    @include respond-to(media-900) {
+        column-gap: 60px;
+    }
+    @include respond-to(media-600) {
+        column-gap: 30px;
+    }
+    @include respond-to(media-500) {
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: center;
+        padding-top: 10px;
+    }
+    &__content {
+        flex-grow: 1;
+    }
+    &__image {
+        flex-shrink: 0;
+        padding: 20px 30px;
+        background: #fff9ee;
+        border: solid 10px $color-white;
+        box-shadow: 3px 5px 25px rgba(0, 0, 0, 0.2);
+        transform: rotate(1deg);
+        @include respond-to(media-700) {
+            padding: 10px 20px;
+            border-width: 8px;
+        }
+        @include respond-to(media-600) {
+            padding: 10px 15px;
+            border-width: 6px;
+        }
+        @include respond-to(media-500) {
+            padding: 15px 50px;
+            border-width: 8px;
+        }
+        @include respond-to(media-400) {
+            padding: 15px 40px;
+            border-width: 7px;
+        }
+        img {
+            width: 150px;
+            @include respond-to(media-900) {
+                width: 120px;
+            }
+            @include respond-to(media-700) {
+                width: 100px;
+            }
+            @include respond-to(media-600) {
+                width: 80px;
+            }
+            @include respond-to(media-500) {
+                width: 120px;
+            }
+            @include respond-to(media-400) {
+                width: 100px;
+            }
+        }
+    }
+    span,
+    p,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ul,
+    li {
+        color: $color-dark-grey;
+    }
+    p,
+    span {
+        font-size: 20px;
+        line-height: 1.4;
+        margin-bottom: 0;
+        @include respond-to(media-600) {
+            font-size: 18px;
+        }
+    }
+    &__row {
+        padding-bottom: 1em;
+        @include respond-to(media-500) {
+            padding-bottom: 0.75em;
+        }
+    }
+    &__subtitle {
+        font-weight: 600;
+        font-size: 24px;
+        padding-bottom: 0.1em;
+        @include respond-to(media-600) {
+            font-size: 22px;
+        }
+        @include respond-to(media-400) {
+            font-size: 20px;
+        }
+    }
+    ul {
+        padding-left: 30px;
+    }
+    li {
+        margin-bottom: 0.2em;
+        @include respond-to(media-500) {
+            margin-bottom: 0.1em;
+        }
+    }
+}

@@ -1,0 +1,189 @@
+.timeline {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    max-width: 1100px;
+    @include flexColumn;
+    @include respond-to(media-700) {
+        align-items: flex-start;
+    }
+
+    &__logo {
+        max-width: 180px;
+        padding-bottom: 10px;
+        @include respond-to(media-700) {
+            max-width: 70px;
+        }
+        @include respond-to(media-500) {
+            max-width: 50px;
+        }
+    }
+    &__start-line {
+        height: 40px;
+        width: 4px;
+        background: $color-light-grey;
+        @include respond-to(media-700) {
+            margin-left: 33px;
+        }
+        @include respond-to(media-500) {
+            margin-left: 22px;
+        }
+    }
+    &__sections-container {
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+    }
+    &__section {
+        @include flexColumn;
+        @include respond-to(media-700) {
+            align-items: flex-start;
+        }
+    }
+    &__row {
+        @include flexCenter;
+        column-gap: 120px;
+        position: relative;
+        @include respond-to(media-700) {
+            column-gap: 0;
+            justify-content: flex-start;
+        }
+    }
+    &__content {
+        text-align: left;
+        max-width: calc(50% - 60px);
+        @include respond-to(media-700) {
+            max-width: 100%;
+            padding-left: 80px;
+        }
+        @include respond-to(media-500) {
+            padding-left: 60px;
+        }
+    }
+    &__year {
+        font-family: $dancing-script;
+        font-weight: 700;
+        line-height: 2em;
+        font-size: 30px;
+        @include respond-to(media-500) {
+            font-size: 24px;
+        }
+    }
+    &__line {
+        width: 4px;
+        background: $color-light-grey;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        @include respond-to(media-700) {
+            left: 35px;
+        }
+        @include respond-to(media-500) {
+            left: 25px;
+        }
+    }
+    &__image {
+        width: 300px;
+        height: 150px;
+        border: solid 3px $color-white;
+        position: relative;
+        margin-left: auto;
+        @include respond-to(media-700) {
+            display: none;
+        }
+    }
+    &__date {
+        font-family: $dancing-script;
+        color: $color-gold;
+        font-weight: 700;
+        line-height: 1;
+        font-size: 20px;
+        text-transform: capitalize;
+        @include respond-to(media-500) {
+            font-size: 18px;
+        }
+    }
+    &__title {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: 2px;
+        padding-bottom: 0.5em;
+        @include respond-to(media-500) {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+    }
+    &__text {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 0.5em;
+        @include respond-to(media-500) {
+            font-size: 15px;
+        }
+    }
+    &__end-line {
+        height: 30px;
+        width: 4px;
+        background: $color-light-grey;
+        @include respond-to(media-700) {
+            margin-left: 33px;
+        }
+        @include respond-to(media-500) {
+            margin-left: 22px;
+        }
+    }
+    &__completed-subtitle {
+        font-family: $dancing-script;
+        color: $color-gold;
+        text-align: center;
+        line-height: 54px;
+        font-size: 50px;
+        @include flexCenter;
+        column-gap: 0.4em;
+        svg {
+            height: 0.75em;
+        }
+        svg:nth-of-type(1) {
+            transform: rotate(-135deg);
+        }
+        svg:nth-of-type(2) {
+            transform: rotate(45deg);
+        }
+        path {
+            color: $color-gold;
+        }
+
+        @include respond-to(media-700) {
+            align-self: center;
+        }
+        @include respond-to(media-500) {
+            font-size: 40px;
+        }
+        @include respond-to(media-400) {
+            font-size: 36px;
+        }
+    }
+    .btn--outline-gold {
+        align-self: center;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .timeline__section:nth-child(2n) {
+        .timeline__content {
+            text-align: right;
+            order: 1;
+        }
+        .timeline__line {
+            order: 2;
+        }
+        .timeline__image {
+            order: 3;
+            margin-left: 0;
+            margin-right: auto;
+        }
+    }
+}

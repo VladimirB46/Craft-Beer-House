@@ -1,0 +1,24 @@
+$dancing-script: "Dancing Script", cursive;
+$grey-stripes: repeating-linear-gradient(
+    $color-dark-grey 0px,
+    $color-dark-grey 4px,
+    $color-grey 4px,
+    $color-grey 20px
+);
+$grey-stripes-small: repeating-linear-gradient(
+    $color-dark-grey 0px,
+    $color-dark-grey 2px,
+    $color-grey 2px,
+    $color-grey 10px
+);
+
+$timeline-year-line-height: 60px;
+$timeline-line-height: 150px;
+$timeline-line-half-height: $timeline-line-height / 2;
+
+$timeline-mobile-year-line-height: 50px;
+$timeline-mobile-line-height: 160px;
+$timeline-mobile-line-half-height: $timeline-mobile-line-height / 2;
+
+$magnifying-glass-size: 200px;
+$magnifying-frame-size: 12px;

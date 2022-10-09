@@ -1,0 +1,273 @@
+a {
+    text-decoration: none;
+}
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+.btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    line-height: 2.5em;
+    font-size: 20px;
+    padding: 0 1em;
+    letter-spacing: 3px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    color: $color-white;
+
+    @include respond-to(media-600) {
+        font-size: 18px;
+    }
+    @include respond-to(media-500) {
+        padding: 0 0.5em;
+        letter-spacing: 2px;
+        line-height: 2.4em;
+    }
+    @include respond-to(media-500) {
+        font-size: 17px;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 6px);
+        height: calc(100% - 4px);
+        z-index: -1;
+
+        @include respond-to(media-600) {
+            width: calc(100% - 4px);
+        }
+    }
+
+    &:hover::before {
+        width: 0;
+    }
+}
+
+.btn--primary {
+    color: $color-dark-grey;
+    border: solid 2px $color-gold;
+
+    &::before {
+        background: $color-gold;
+    }
+
+    &:hover {
+        color: $color-gold;
+    }
+}
+.btn--primary.btn--white-color {
+    color: $color-white;
+    &:hover {
+        color: $color-gold;
+    }
+}
+
+.btn--secondary {
+    color: $color-white;
+    border: solid 2px $color-very-light-grey;
+
+    &::before {
+        background: $color-very-light-grey;
+    }
+
+    &:hover {
+        color: $color-very-light-grey;
+    }
+}
+
+.btn--outline-gold {
+    border: solid 2px $color-gold;
+    color: $color-gold;
+
+    &::before {
+        background: $color-gold;
+        width: 0;
+    }
+
+    &:hover {
+        color: $color-dark-grey;
+        &::before {
+            width: calc(100% - 6px);
+        }
+    }
+}
+
+.btn--green {
+    color: $color-white;
+    border: solid 2px $color-green;
+
+    &::before {
+        background: $color-green;
+    }
+
+    &:hover {
+        color: $color-green;
+    }
+}
+
+.btn--red {
+    color: $color-white;
+    border: solid 2px $color-red;
+
+    &::before {
+        background: $color-red;
+    }
+
+    &:hover {
+        color: $color-red;
+    }
+}
+
+.btn--small {
+    font-size: 18px;
+    line-height: 2.45em;
+    padding: 0 0.75em;
+    text-transform: capitalize;
+    letter-spacing: 0;
+    &::before {
+        height: calc(100% - 4px);
+        width: calc(100% - 4px);
+    }
+    @include respond-to(media-500) {
+        font-size: 16px;
+    }
+}
+
+.scroll-to-top-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    z-index: 5;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: $color-black;
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.scroll-to-top-btn svg {
+    height: 22px;
+}
+.scroll-to-top-btn:hover {
+    background: $color-gold;
+}
+
+.add-to-cart-btn {
+    border: solid 2px $color-green;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        background: $color-green;
+        width: calc(100% - 4px);
+    }
+    span {
+        display: block;
+        white-space: nowrap;
+    }
+    &__added,
+    &__add {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__added,
+    &__view {
+        opacity: 0;
+    }
+    &__cart {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-150%, -50%);
+        width: 100%;
+        height: 100%;
+        @include flexCenter;
+        transition-delay: 0.5s;
+        svg {
+            height: 1.5em;
+        }
+    }
+    &__box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(calc(-50% + 0.15em), -150%);
+        width: 100%;
+        height: 100%;
+        @include flexCenter;
+        transition-delay: 0.8s;
+        svg {
+            height: 1em;
+        }
+    }
+    &:hover {
+        border-color: $color-dark-green;
+        &::before {
+            width: calc(100% - 4px);
+            background: $color-dark-green;
+        }
+    }
+}
+.add-to-cart-btn--clicked {
+    cursor: default;
+
+    &:hover {
+        border-color: $color-green;
+        &::before {
+            background: $color-green;
+        }
+    }
+
+    .add-to-cart-btn__add {
+        animation: disappear 0.3s forwards;
+    }
+    .add-to-cart-btn__cart {
+        transform: translate(-50%, -50%);
+        animation: cartDisappear 0.3s 2s forwards;
+    }
+    .add-to-cart-btn__box {
+        transform: translate(calc(-50% + 0.15em), calc(-50% - 0.5em));
+        animation: cartDisappear 0.3s 2s forwards;
+    }
+    .add-to-cart-btn__added {
+        animation: appear 0.3s 2.5s forwards, disappear 0.3s 3.7s forwards;
+    }
+    .add-to-cart-btn__view {
+        animation: appear 0.3s 4.2s forwards;
+    }
+}
+
+@keyframes cartDisappear {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 150%;
+    }
+}
+
+@keyframes disappear {
+    to {
+        opacity: 0;
+    }
+}
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}

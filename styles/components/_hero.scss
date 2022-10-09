@@ -1,0 +1,43 @@
+.hero {
+    position: relative;
+    &__container {
+        padding-top: 170px;
+        padding-bottom: 30px;
+        @include flexCenter;
+    }
+    &__content {
+        @include flexColumn;
+        text-align: center;
+        padding: 30px 0;
+        .text--gold-dancing-script {
+            padding-bottom: 0.3em;
+
+            @include respond-to(media-900) {
+                font-size: 35px;
+            }
+
+            @include respond-to(media-600) {
+                font-size: 30px;
+            }
+
+            @include respond-to(media-500) {
+                font-size: 26px;
+                padding-bottom: 0.15em;
+            }
+        }
+        .title--big {
+            padding-bottom: 0.3em;
+        }
+    }
+    .background img {
+        object-position: left center;
+    }
+}
+.hero--100vh {
+    .hero__container {
+        min-height: 100vh;
+    }
+    .title--big {
+        padding-bottom: 0.5em;
+    }
+}

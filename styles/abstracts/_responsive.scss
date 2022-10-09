@@ -1,0 +1,76 @@
+$media-1300: 1300px;
+$media-1200: 1200px;
+$media-1100: 1100px;
+$media-1000: 1000px;
+$media-900: 900px;
+$media-800: 800px;
+$media-700: 700px;
+$media-600: 600px;
+$media-500: 500px;
+$media-400: 400px;
+
+@mixin respond-to($media) {
+    @if $media == media-1300 {
+        @media only screen and (max-width: $media-1300) {
+            @content;
+        }
+    }
+    @if $media == media-1200 {
+        @media only screen and (max-width: $media-1200) {
+            @content;
+        }
+    }
+    @if $media == media-1100 {
+        @media only screen and (max-width: $media-1100) {
+            @content;
+        }
+    }
+    @if $media == media-1000 {
+        @media only screen and (max-width: $media-1000) {
+            @content;
+        }
+    }
+    @if $media == media-900 {
+        @media only screen and (max-width: $media-900) {
+            @content;
+        }
+    }
+    @if $media == media-800 {
+        @media only screen and (max-width: $media-800) {
+            @content;
+        }
+    }
+    @if $media == media-700 {
+        @media only screen and (max-width: $media-700) {
+            @content;
+        }
+    }
+    @if $media == media-600 {
+        @media only screen and (max-width: $media-600) {
+            @content;
+        }
+    }
+    @if $media == media-500 {
+        @media only screen and (max-width: $media-500) {
+            @content;
+        }
+    }
+    @if $media == media-400 {
+        @media only screen and (max-width: $media-400) {
+            @content;
+        }
+    }
+}
+
+// @mixin respond-to-height($media) {
+//     @if $media == media-400 {
+//         @media only screen and (max-height: $media-400) {
+//             @content;
+//         }
+//     }
+//     @if $media == media-500 {
+//         @media only screen and (max-height: $media-500) {
+//             @content;
+//         }
+//     }
+// }

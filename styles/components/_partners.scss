@@ -1,0 +1,16 @@
+.partner-logos-container {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding-top: 30px;
+    row-gap: 30px;
+
+    @include respond-to(media-600) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .partner-logo {
+        display: block;
+        max-width: 200px;
+    }
+}

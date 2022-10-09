@@ -1,0 +1,118 @@
+p {
+    font-size: 18px;
+    margin-bottom: 1em;
+    line-height: 1.6;
+    @include respond-to(media-500) {
+        line-height: 1.4;
+    }
+}
+p:last-of-type {
+    margin-bottom: 0;
+}
+.text--gold-dancing-script {
+    color: $color-gold;
+    font-family: $dancing-script;
+    font-size: 42px;
+    line-height: 1;
+
+    @include respond-to(media-900) {
+        font-size: 38px;
+    }
+    @include respond-to(media-600) {
+        font-size: 34px;
+    }
+
+    @include respond-to(media-500) {
+        font-size: 30px;
+    }
+
+    @include respond-to(media-400) {
+        font-size: 26px;
+    }
+}
+.text--center {
+    text-align: center;
+}
+.text--dark {
+    color: $color-dark-grey;
+    * {
+        color: $color-dark-grey;
+    }
+    .text--gold-dancing-script {
+        color: $color-gold;
+    }
+}
+.title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: 5px;
+    line-height: 1.25;
+    padding-bottom: 0.3em;
+
+    @include respond-to(media-900) {
+        font-size: 35px;
+        letter-spacing: 4px;
+    }
+    @include respond-to(media-600) {
+        font-size: 30px;
+        letter-spacing: 3px;
+    }
+
+    @include respond-to(media-500) {
+        font-size: 28px;
+    }
+
+    @include respond-to(media-400) {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+}
+.title--big {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 70px;
+    letter-spacing: 15px;
+    line-height: 1.15;
+
+    @include respond-to(media-900) {
+        font-size: 50px;
+    }
+
+    @include respond-to(media-600) {
+        font-size: 40px;
+        letter-spacing: 10px;
+    }
+
+    @include respond-to(media-500) {
+        font-size: 38px;
+        letter-spacing: 5px;
+    }
+
+    @include respond-to(media-400) {
+        letter-spacing: 2px;
+    }
+}
+.text--multiple-rows {
+    span {
+        display: block;
+    }
+}
+.text--barley-on-side {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    .barley {
+        position: absolute;
+        top: 50%;
+        width: 0.6em;
+    }
+    .barley--left {
+        right: calc(100% + 0.7em);
+        transform: translateY(-50%) rotate(-90deg);
+    }
+    .barley--right {
+        left: calc(100% + 0.7em);
+        transform: translateY(-50%) rotate(90deg);
+    }
+}
