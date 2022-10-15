@@ -5,7 +5,7 @@ import logo from '../public/images/logo.png';
 import TimelineSection from './TimelineSection';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWheatAwn } from '@fortawesome/free-solid-svg-icons';
+import { faWheatAwn, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 const Timeline = ({ sections }) => {
 

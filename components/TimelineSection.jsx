@@ -16,6 +16,7 @@ const TimelineSection = ({ section }) => {
                         src={ section.image }
                         alt={ section.title }
                         layout='fill'
+                        load
                     />
                 </div>
                 <div className={`${timelineClass}__line`} />

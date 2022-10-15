@@ -21,19 +21,19 @@ const Footer = () => {
                 socials: [
                     {
                         icon: faFacebookF,
-                        link: '/',
+                        link: 'https://www.facebook.com/',
                     },
                     {
                         icon: faTwitter,
-                        link: '/',
+                        link: 'https://twitter.com/',
                     },
                     {
                         icon: faLinkedin,
-                        link: '/',
+                        link: 'https://www.linkedin.com/',
                     },
                     {
                         icon: faInstagram,
-                        link: '/',
+                        link: 'https://www.instagram.com/',
                     },
                 ]
             },
@@ -124,11 +124,14 @@ const Footer = () => {
                                 { column.socials && 
                                     <div className={`${footerClass}__socials`}>
                                         { column.socials.map((socialItem, index) => (
-                                            <Link href={ socialItem.link } key={ index }>
-                                                <a className={`${footerClass}__social-btn`}>
-                                                    <FontAwesomeIcon icon={ socialItem.icon } />
-                                                </a>
-                                            </Link>
+                                            <a 
+                                                className={`${footerClass}__social-btn`}
+                                                href={ socialItem.link }
+                                                key={ index }
+                                                target='_blank'
+                                            >
+                                                <FontAwesomeIcon icon={ socialItem.icon } />
+                                            </a>
                                         ))}
                                     </div>
                                 }

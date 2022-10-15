@@ -67,14 +67,21 @@ section {
     @include respond-to(media-1100) {
         padding: 50px 0;
     }
-
     @include respond-to(media-500) {
         padding: 40px 0;
     }
-
     @include respond-to(media-400) {
         padding: 30px 0;
     }
+}
+.ptb--30 {
+    padding: 30px 0;
+    @include respond-to(media-500) {
+        padding: 20px 0;
+    }
+}
+.pt--03-em {
+    padding-top: 0.3em;
 }
 
 .image--white-border {

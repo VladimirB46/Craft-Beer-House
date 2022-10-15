@@ -39,30 +39,41 @@ textarea {
     outline: none;
     background: none;
     border: none;
-    padding: 0.3em 0.2em;
+    padding: 0.2em;
     font-size: 20px;
-    border: solid 2px transparent;
+    border-bottom: solid 2px transparent;
+    background: none;
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:hover {
+        transition: background-color 5000s ease-in-out 0s;
+    }
 }
-
 .input--light {
-    border-bottom-color: $color-white;
-    color: $color-gold;
+    border-color: $color-white;
+    color: $color-white;
     &:focus {
-        border-bottom-color: $color-gold;
+        border-color: #dddddd;
     }
     &::placeholder {
-        color: $color-white;
+        color: #dddddd;
     }
-}
-
-.input--light-active {
-    border-bottom-color: $color-gold;
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:hover {
+        -webkit-text-fill-color: $color-white;
+    }
 }
 
 .input--dark {
-    border-bottom-color: $color-very-light-grey;
+    border-color: $color-very-light-grey;
     color: $color-dark-grey;
     &::placeholder {
         color: $color-very-light-grey;
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:hover {
+        -webkit-text-fill-color: $color-dark-grey;
     }
 }

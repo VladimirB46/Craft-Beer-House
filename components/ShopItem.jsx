@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link';
+import Image from 'next/image';
 import AddToCartBtn from './AddToCartBtn';
+import unavailable from '../public/images/unavailable.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark as faBookmarkSolid } from '@fortawesome/free-solid-svg-icons';
@@ -29,7 +31,11 @@ const ShopItem = ({ item }) => {
     return (
         <div className={ itemClass }>
             <div className={`${itemClass}__image`}>
-                <img src={ item.image_url} alt={ item.name } />
+                <Image 
+                    src={ item.image_url ? item.image_url : unavailable } 
+                    alt={ item.name } 
+                    layout='fill' 
+                />
             </div>
             <button 
                 className={`${itemClass}__save-btn`}

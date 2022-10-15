@@ -15,6 +15,7 @@ const Modal = ({ open, setOpen, children }) => {
                     <button className='modal__close-btn' onClick={() => setOpen(false)} />
                     { children }
                 </motion.div>
+                
                 <motion.div 
                     className='modal-overlay'
                     onClick={() => setOpen(false)} 

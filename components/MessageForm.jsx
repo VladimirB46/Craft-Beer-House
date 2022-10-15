@@ -2,21 +2,6 @@ import React, { useEffect } from 'react'
 
 const MessageForm = () => {
 
-    useEffect(() => {
-        const inputs = document.querySelectorAll('.input');
-
-        inputs.forEach(input => {
-            input.onblur = () => {
-                if (input.value.length > 0) {
-                    input.classList.add('input--light-active');
-                }
-                else {
-                    input.classList.remove('input--light-active');
-                }
-            }
-        })
-    }, [])
-
     return (
         <div className='form'>
             <div className='form__row form__row--2-parts'>

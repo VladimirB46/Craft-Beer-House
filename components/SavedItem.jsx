@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import unavailable from '../public/images/unavailable.png';
 
 import { useDispatch } from 'react-redux';
 import { removeFromSaved, editNotes } from '../features/savedSlice';
@@ -11,7 +13,8 @@ const SavedItem = ({ item }) => {
     
     const [ removed, setRemoved ] = useState(false);
     
-    const itemClass = !removed ? 'saved-item' : 'saved-item--disappear saved-item';
+    const itemClass = 'saved-item';
+    const containerClass = !removed ? 'saved-item' : 'saved-item--disappear saved-item';
 
     const handleRemove = () => {
         setRemoved(true);
@@ -38,25 +41,31 @@ const SavedItem = ({ item }) => {
 
     return (
         <>
-            <div className={itemClass}>
+            <div className={containerClass}>
                 <button onClick={ handleRemove } className={`${itemClass}__remove-btn`} />
-                { item.image_url && <div className={`${itemClass}__image`}>
-                    <img src={ item.image_url} alt={ item.name } />
-                </div>}
-                <Link href={`/details/${item.id}`}>
-                    <a>
-                        <h3 className={`${itemClass}__name`}>
-                            { item.name }
-                        </h3>
-                    </a>
-                </Link>
-                <div className='center-btns'>
+                <div className={`${itemClass}__image`}>
+                    <Image 
+                        src={ item.image_url ? item.image_url : unavailable } 
+                        alt={ item.name } 
+                        layout='fill' 
+                    />
+                </div>
+                <div className={`${itemClass}__content`}>
                     <Link href={`/details/${item.id}`}>
-                        <a className='btn btn--secondary btn--small'>details</a>
+                        <a>
+                            <h3 className={`${itemClass}__name`}>
+                                { item.name }
+                            </h3>
+                        </a>
                     </Link>
-                    <button onClick={ handleOpenEditModal } className='btn btn--primary btn--white-color btn--small'>
-                        notes
-                    </button>
+                    <div className='center-btns'>
+                        <Link href={`/details/${item.id}`}>
+                            <a className='btn btn--secondary btn--small'>details</a>
+                        </Link>
+                        <button onClick={ handleOpenEditModal } className='btn btn--primary btn--white-color btn--small'>
+                            notes
+                        </button>
+                    </div>
                 </div>
             </div>
 

@@ -251,26 +251,26 @@
         }
     }
     &__image {
-        width: 120px;
-        padding: 0 30px;
+        width: 60px;
+        margin: 0 30px;
         height: 100px;
         flex-shrink: 0;
+        position: relative;
         @include respond-to(media-600) {
-            width: 90px;
+            width: 70px;
             height: 90px;
             padding: 0;
-            padding-right: 20px;
+            margin-right: 20px;
+            margin-left: 0;
         }
         @include respond-to(media-400) {
-            width: 70px;
+            width: 55px;
             height: 70px;
-            padding-right: 15px;
+            margin-right: 15px;
         }
         img {
             object-fit: contain;
             object-position: center center;
-            width: 100%;
-            height: 100%;
         }
     }
     &__name {

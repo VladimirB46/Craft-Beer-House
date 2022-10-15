@@ -5,6 +5,7 @@
     left: 0;
     width: 100%;
     padding: 10px 0;
+    transform-origin: top;
 
     @include respond-to(media-1100) {
         background: $grey-stripes-small;
@@ -17,7 +18,7 @@
     }
     &__logo {
         display: block;
-        max-width: 150px;
+        max-width: 120px;
         transition: none;
         font-size: 0;
 
@@ -194,7 +195,7 @@
         background: $grey-stripes-small;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         position: fixed;
-        animation: headerAppear 0.3s forwards ease-in-out;
+        animation: headerAppear 0.2s forwards ease-in-out;
 
         .header__logo {
             max-width: 60px;
@@ -204,9 +205,9 @@
 
 @keyframes headerAppear {
     from {
-        max-height: 0;
+        transform: scaleY(0);
     }
     to {
-        max-height: 100px;
+        transform: scaleY(1);
     }
 }

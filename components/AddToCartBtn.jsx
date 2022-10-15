@@ -24,7 +24,7 @@ const AddToCartBtn = ({ item }) => {
     }, [])
 
     const handleAddToCart = () => {
-        setClicked(!clicked);
+        setClicked(true);
         dispatch(addToCart(item));
         setTimeout(() => {
             setLinkDisplayed(true);

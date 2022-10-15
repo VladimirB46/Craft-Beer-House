@@ -22,7 +22,7 @@ const Header = () => {
     const headerClass = headerScrolled ? 'header header--scrolled' : 'header';
 
     const handleCheckHeaderScrolled = () => {
-        if (window.scrollY > 200) {
+        if (window.scrollY > 190) {
             setHeaderScrolled(true);
         }
         else {
@@ -35,7 +35,7 @@ const Header = () => {
 
         document.addEventListener('scroll', () => {
             handleCheckHeaderScrolled();
-        })
+        }) 
     }, [])
 
     const cartItems = useSelector(getCartItems);
@@ -56,7 +56,8 @@ const Header = () => {
                             <a className='header__logo' onClick={() => setNavOpen(false)}>
                                 <Image
                                     src={ logo } 
-                                    alt=''
+                                    alt='logo'
+                                    priority
                                 />
                             </a>
                         </Link>
@@ -72,7 +73,10 @@ const Header = () => {
                                 </div>
                             </a>
                         </Link>
-                        <button onClick={ handleNavBtn } className={ navOpen ? 'header__nav-btn nav-open' : 'header__nav-btn'}>
+                        <button 
+                            onClick={ handleNavBtn } 
+                            className={ navOpen ? 'header__nav-btn nav-open' : 'header__nav-btn'}
+                        >
                             <span></span>
                             <span></span>
                             <span></span>

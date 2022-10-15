@@ -23,7 +23,7 @@
     width: 500px;
     max-width: calc(100% - 30px);
     @include respond-to(media-500) {
-        padding: 20px 20px 15px;
+        padding: 25px 20px 15px;
     }
     @include respond-to(media-400) {
         max-width: calc(100% - 20px);
@@ -37,6 +37,10 @@
         height: 30px;
         border-radius: 50%;
         @include flexCenter;
+        @include respond-to(media-500) {
+            top: 1px;
+            right: 1px;
+        }
         &::before,
         &::after {
             content: "";

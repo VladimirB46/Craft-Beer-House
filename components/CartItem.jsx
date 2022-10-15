@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link';
+import Image from 'next/image';
+import unavailable from '../public/images/unavailable.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
@@ -41,7 +43,11 @@ const CartItem = ({ item }) => {
     return (
         <div className={ itemContainerCLass }>
             <div className={`${itemClass}__image`}>
-                <img src={ item.image_url } alt={ item.name } />
+                <Image 
+                    src={ item.image_url ? item.image_url : unavailable } 
+                    alt={ item.name } 
+                    layout='fill' 
+                />
             </div>
             <div className={`${itemClass}__content`}>
                 <Link href={`/details/${item.id}`}>

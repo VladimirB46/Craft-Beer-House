@@ -27,7 +27,7 @@
             margin-left: 33px;
         }
         @include respond-to(media-500) {
-            margin-left: 22px;
+            margin-left: 23px;
         }
     }
     &__sections-container {
@@ -93,6 +93,10 @@
         @include respond-to(media-700) {
             display: none;
         }
+        img {
+            object-fit: cover;
+            object-position: center center;
+        }
     }
     &__date {
         font-family: $dancing-script;
@@ -128,11 +132,27 @@
         height: 30px;
         width: 4px;
         background: $color-light-grey;
+        position: relative;
+        border-radius: 0 0 5px 5px;
+        // &::before {
+        //     content: "";
+        //     display: block;
+        //     width: 10px;
+        //     height: 5px;
+        //     background: $color-light-grey;
+        //     position: absolute;
+        //     bottom: 0;
+        //     left: 50%;
+        //     transform: translateX(-50%);
+        //     clip-path: polygon(100% 0, 0 0, 50% 100%);
+        //     border-radius: 4px;
+        // }
+
         @include respond-to(media-700) {
             margin-left: 33px;
         }
         @include respond-to(media-500) {
-            margin-left: 22px;
+            margin-left: 23px;
         }
     }
     &__completed-subtitle {
@@ -158,9 +178,11 @@
 
         @include respond-to(media-700) {
             align-self: center;
+            margin-top: 20px;
         }
         @include respond-to(media-500) {
             font-size: 40px;
+            margin-top: 10px;
         }
         @include respond-to(media-400) {
             font-size: 36px;
@@ -168,6 +190,12 @@
     }
     .btn--outline-gold {
         align-self: center;
+        @include respond-to(media-700) {
+            margin-top: 20px;
+        }
+        @include respond-to(media-500) {
+            margin-top: 10px;
+        }
     }
 }
 

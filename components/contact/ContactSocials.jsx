@@ -10,19 +10,19 @@ const ContactSocials = () => {
         {
             icon: faFacebookF,
             title: 'facebook',
-            link: '/',
+            link: 'https://www.facebook.com/',
             text: 'Like our Facebook page for awesome deals and new arrivals.',
         },
         {
             icon: faInstagram,
             title: 'instagram',
-            link: '/',
+            link: 'https://www.instagram.com/',
             text: 'Hashtag #craftbeerhouse to get a change to get free goodies.',
         },
         {
             icon: faTwitter,
             title: 'twitter',
-            link: '/',
+            link: 'https://twitter.com/',
             text: 'Follow us on Twitter for all the latest news incraft beer brewing.',
         },
     ]
