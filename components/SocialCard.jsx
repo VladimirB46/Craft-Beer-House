@@ -6,7 +6,7 @@ const SocialCard = ({ socialItem }) => {
     const cardClass = 'social-card';
 
     return (
-        <a className={ cardClass } href={ socialItem.link } target='_blank'>
+        <a className={ cardClass } href={ socialItem.link } target='_blank' rel='noreferrer'>
             <div className={`${cardClass}__icon`}>
                 <FontAwesomeIcon icon={ socialItem.icon } />
             </div>

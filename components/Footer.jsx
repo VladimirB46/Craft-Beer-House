@@ -129,6 +129,7 @@ const Footer = () => {
                                                 href={ socialItem.link }
                                                 key={ index }
                                                 target='_blank'
+                                                rel='noreferrer'
                                             >
                                                 <FontAwesomeIcon icon={ socialItem.icon } />
                                             </a>
