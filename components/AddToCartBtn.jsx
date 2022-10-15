@@ -21,7 +21,7 @@ const AddToCartBtn = ({ item }) => {
 
     useEffect(() => {
         if (cartItems.findIndex(elem => elem.id === item.id) >= 0) setLinkDisplayed(true);
-    }, [cartItems])
+    }, [])
 
     const handleAddToCart = () => {
         setClicked(true);
